@@ -1,56 +1,68 @@
 //Mobile
-const mobileView = document.querySelectorAll(".mobile-view");
-const dropMobile = document.querySelectorAll(".drop-mb");
+const mobLink = document.querySelectorAll(".mob-link");
+const dropMobile = document.querySelectorAll(".drop-mob");
 const arrowMobile = document.querySelectorAll(".arrow-mb");
-const view = document.querySelectorAll(".view");
-
-//Desktop
-const openMb = document.querySelectorAll(".open");
-const drop = document.querySelectorAll(".drop");
-const text = document.querySelectorAll(".text");
-const arrow = document.querySelectorAll(".dropdown-arrow");
-
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu-mb");
 
+//Hamburger view
 hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("active");
-    navMenu.classList.toggle("active");
+  hamburger.classList.toggle("active");
+  navMenu.classList.toggle("active");
 })
 
-function remove(classs, effect) {
-  for (let i = 0; i < classs.length; i++) {
-      classs[i].classList.remove(effect);
+function remover(x, y) {
+  for (let i = 0; i < x.length; i++) {
+      x[i].classList.remove(y);
   }
 }
 
-for (let i = 0; i < view.length; i++) {
-  view[i].addEventListener("click", () => {
+for (let i = 0; i < mobLink.length; i++) {
+  mobLink[i].addEventListener("click", () => {
     if(dropMobile[i].classList.contains("show")){
-      remove(dropMobile, "show");
-      remove(arrowMobile, "rotate");
+      remover(dropMobile, "show");
+      remover(arrowMobile, "rotate");
     } else{
-      remove(dropMobile, "show");
-      remove(arrowMobile, "rotate");
+      remover(dropMobile, "show");
+      remover(arrowMobile, "rotate");
       dropMobile[i].classList.toggle("show");
       arrowMobile[i].classList.toggle("rotate");
     }
   })
 }
 
-for (let i=0; i < openMb.length; i++) {
-  openMb[i].addEventListener("click", () => {
-    if(drop[i].classList.contains("show")){
-      remove(drop, "show");
-      remove(text, "active");
-      remove(arrow, "rotate");
+//Desktop
+const heade = document.querySelector(".header-content");
+const deskLink = document.querySelectorAll(".desk-link");
+const dropDesk = document.querySelectorAll(".drop-desk");
+const deskText = document.querySelectorAll(".desk-text");
+const arrowDt = document.querySelectorAll(".arrow-dt");
+
+for (let i = 0; i < deskLink.length; i++) {
+  deskLink[i].addEventListener("click", () => {
+    if(dropDesk[i].classList.contains("show")){
+      remover(dropDesk, "show");
+      remover(deskText, "active");
+      remover(arrowDt, "rotate");
     } else{
-      remove(drop, "show");
-      remove(text, "active");
-      remove(arrow, "rotate");
-      drop[i].classList.toggle("show");
-      text[i].classList.toggle("active");
-      arrow[i].classList.toggle("rotate");
+      remover(dropDesk, "show");
+      remover(deskText, "active");
+      remover(arrowDt, "rotate");
+      dropDesk[i].classList.toggle("show");
+      deskText[i].classList.toggle("active");
+      arrowDt[i].classList.toggle("rotate");
     }
   })
 }
+
+heade.addEventListener("click", () => {
+  remover(dropDesk, "show");
+  remover(deskText, "active");
+  remover(arrowDt, "rotate");
+})
+
+window.addEventListener("resize", () => {
+  remover(dropDesk, "show");
+  remover(deskText, "active");
+  remover(arrowDt, "rotate");
+})

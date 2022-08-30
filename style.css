@@ -14,15 +14,19 @@ body{
     background-color: hsla(210, 2%, 80%, 0.088);
 }
 
+@media only screen and (max-width: 370px){
+    body{
+        width: 102%;
+    }
+}
+
 header{
-    /* background-color: hsl(13, 100%, 72%); */
     background-image:  url('/images/bg-pattern-intro-mobile.svg') , linear-gradient(
         to right,
         hsl(13, 100%, 72%),
         hsl(353, 100%, 62%));
     background-repeat: no-repeat;
-    background-position: 34% 53%;
-    /* background-position: top -400px left, center; */
+    background-position: 38% 43%;
     padding: 60px 0px 130px;
     margin-bottom: 100px;
     border-radius: 0 0 0 90px;
@@ -62,10 +66,6 @@ header{
 
 .nav-menu{
     display: none;
-}
-
-.nav-menu-mb{
-    display: block;
 }
 
 .nav,
@@ -383,6 +383,25 @@ footer{
     text-decoration: underline;
 }
 
+.attribution { 
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 13px;
+    text-align: center;
+    color: white;
+    margin: 0 auto;
+    margin-top: 40px;
+    font-weight: 700;
+} 
+
+.attribution a { 
+    color: hsl(13, 100%, 72%);
+}
+
+.attribution a:hover{
+    text-decoration: underline;
+}
+
+
 @media only screen and (max-width: 899px){
     .active.hamburger::before{
         content: url('/images/icon-close.svg');
@@ -391,7 +410,7 @@ footer{
     .nav-menu-mb{
         position: absolute;
         top: 110px;
-        left: -105%;
+        left: -900px;
         margin: 0 auto;
         font-family: 'Overpass', sans-serif;
         background-color: white;
@@ -408,50 +427,49 @@ footer{
         font-size: 19px;
     }
     
-    .nav-menu-mb ul li a{ 
+    .nav-menu-mb ul li .mob-link{ 
         color: hsl(208, 49%, 24%);
         font-weight: 700;
     }
-    
-    .desktop{
-        display: none;
-    }
-    
+
     .arrow-mb{
         margin-left: 5px;
+        transition: all .3s ease-in-out;
     }
     
     .arrow-mb.rotate{
         transform: rotate(180deg);
     }
     
-    .drop-mb{
-        display: none;
-        padding: 20px 0 5px;
-        margin-top: 20px;
+    .drop-mob{
+        visibility: hidden;
+        padding: 0;
+        margin-top: 0;
         border-radius: 5px;
+        max-height: 0;
         background-color: hsla(206, 13%, 34%, 0.128);
-        
+        transition: max-height .1s ease-in-out;
     }
     
-    .drop-mb.show{
-        display: block;
-        transition: display .3s ease-in-out;
+    .drop-mob.show{
+        visibility: visible;
+        max-height: 400px;
+        margin-top: 20px;
+        padding: 20px 0 5px;
     }
     
-    .drop-mb ul li{
+    .drop-mob ul li{
         padding-bottom: 15px;
     }
     
-    .drop-mb ul li a{
+    .drop-mob ul li a{
         color: hsla(208, 49%, 24%, 0.71);
         font-size: 17px;
     }
     
-    .drop-mb ul li a:hover{
+    .drop-mob ul li a:hover{
         font-weight: bolder;
         color: hsl(208, 49%, 24%);
-
     }
 
     hr{
@@ -463,10 +481,6 @@ footer{
         margin-top: 20px;
     }
     
-    .desktop-reg{
-        display: none;
-    }
-    
     .mobile-reg ul li .login .login-btn{
         font-family: 'Overpass', sans-serif;
         border: none;
@@ -475,7 +489,7 @@ footer{
         color: hsl(208, 49%, 24%);
         font-weight: 600;
         padding: 10px 0 8px;
-        font-size: 19px;
+        font-size: 18px;
         border-radius: 20px;
         cursor: pointer;
         width: 50px;
@@ -494,24 +508,30 @@ footer{
         font-weight: 600;
         padding: 12px 0;
         width: 120px;
-        font-size: 17px;
+        font-size: 16px;
         border-radius: 25px;
         cursor: pointer;
         transition: all .2s ease-in-out;
     }
 
+    .mobile-reg ul li .sign-up .sign-up-btn:hover{
+        background-image: linear-gradient(
+            to left,
+            hsl(13, 100%, 72%),
+            hsl(353, 100%, 62%));
+        color: white;
+    }
+
     .nav-menu-mb.active{
-        left: 33px;
+        left: 8%;
         transition: all .3s ease-in-out;
     }
-    
 }
 
 @media only screen and (min-width: 550px){
     .nav-menu-mb.active{
-        left: 55px;
-        width: 80%;
-        transition: all .3s ease-in-out;
+        width: 76%;
+        left: 12%;
     }
     
     .header-hero img{
@@ -691,7 +711,16 @@ footer{
 }
 
 @media only screen and (min-width: 900px){
-        .header-container{
+    header{
+        background-image:  url('/images/bg-pattern-intro-desktop.svg') , linear-gradient(
+            to right,
+            hsl(13, 100%, 72%),
+            hsl(353, 100%, 62%));
+        background-repeat: no-repeat;
+        background-position: 29% 50%;
+    }    
+    
+    .header-container{
         display: grid;
         align-items: center;
         grid-template-rows: 1fr;
@@ -723,18 +752,19 @@ footer{
         cursor: pointer;
     }
 
-    .dropdown-arrow.rotate{
-        transform: rotate(180deg);
-    }
-
-    .nav-menu ul li img{
+    .nav-menu ul li .arrow-dt{
         margin-left: 5px;
         transition: all .3s ease-in-out;   
+    }
+
+    .arrow-dt.rotate{
+        transform: rotate(180deg);
     }
 
     .arrow-mb{
         display: none;
     }
+
     .nav-menu ul li{
         font-family: 'Ubuntu', sans-serif;
         font-size: 15px;
@@ -745,7 +775,7 @@ footer{
         color: rgba(255, 255, 255, 0.834);
     }
 
-    .text.active{
+    .desk-text.active{
         text-decoration: underline;
     }
 
@@ -753,41 +783,19 @@ footer{
         display: none;
         position: absolute;
         left: -20px;
-        top: 35px;
-        width: 110px;
-        padding: 10px 0;
-        background-color: white;
-        border-radius: 4px;
-        box-shadow: 0 3px 6px 4px rgba(0, 0, 0, 0.18);
     }
 
-    /* .product-dropdown-menu.show,
-    .company-dropdown-menu.show,
-    .connect-dropdown-menu.show{
-        display: block;
-    } */
-
-    .drop.show{
-        display: block;
-    }
-
-    .product-dropdown-menu ul li,
-    .company-dropdown-menu ul li,
-    .connect-dropdown-menu ul li{
+    .drop-desk ul li{
         padding-bottom: 10px;
         padding: 5px 15px 5px 20px;
     }
 
-    .product-dropdown-menu ul li a,
-    .company-dropdown-menu ul li a,
-    .connect-dropdown-menu ul li a{
+    .drop-desk ul li a{
         font-size: 14px;
         color: black;
     }
 
-    .product-dropdown-menu ul li a:hover,
-    .company-dropdown-menu ul li a:hover,
-    .connect-dropdown-menu ul li a:hover{
+    .drop-desk ul li a:hover{
         font-weight: 700;
         text-decoration: none;
     }
@@ -796,24 +804,25 @@ footer{
         display: none;
         position: absolute;
         left: -15px;
-        top: 35px;
-        width: 110px;
-        padding: 10px 0;
-        background-color: white;
-        border-radius: 4px;
-        box-shadow: 0 3px 6px 4px rgba(0, 0, 0, 0.18);
     }
 
     .connect-dropdown-menu{
         display: none;
         position: absolute;
         left: -15px;
+    }
+
+    .drop-desk{
         top: 35px;
-        width: 110px;
+        width: 120px;
         padding: 10px 0;
         background-color: white;
         border-radius: 4px;
-        box-shadow: 0 3px 6px 4px rgba(0, 0, 0, 0.18);
+        box-shadow: 0 3px 16px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    .drop-desk.show{
+        display: block;
     }
 
     .mobile-reg{
@@ -851,10 +860,10 @@ footer{
         background-color: white;
         color:  hsl(356, 100%, 66%);
         font-weight: 600;
-        padding: 10px 0 8px;
+        padding: 10px 0 10px;
         width: 100px;
         font-size: 15.5px;
-        border-radius: 17px;
+        border-radius: 24px;
         cursor: pointer;
         transition: all .2s ease-in-out;
     }
@@ -1025,7 +1034,7 @@ footer{
     }
 
     footer{
-        padding: 70px 0;
+        padding: 90px 0 20px;
     }
 
     .footer-body{
@@ -1161,7 +1170,7 @@ footer{
 
     .future-text .editor p,
     .future-text .management p{
-        font-size: 15.5px;
+        font-size: 16px;
     }
 
     .art{
@@ -1195,7 +1204,7 @@ footer{
     }
 
     .art-text p{
-        font-size: 16.6px;
+        font-size: 17px;
         width: 101%;
     }
 
@@ -1218,7 +1227,7 @@ footer{
 
     .tooling-text .free p,
     .tooling-text .powerful-tooling p{
-        font-size: 15.5px;
+        font-size: 16px;
     }
 
     .footer-logo img{
@@ -1233,5 +1242,4 @@ footer{
     .bx ul li a{
         font-size: 16px;
     }
-
 }

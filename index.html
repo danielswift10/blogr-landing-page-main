@@ -11,13 +11,8 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
   <title>Frontend Mentor | [Blogr]</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <!-- <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style> -->
 </head>
+
 <body>
   <header>
     <div class="header-body">
@@ -29,9 +24,8 @@
         </div>
         <div class="nav-menu">
           <ul>
-          <li class="open text"><a href="#">Product</a><img src="images/icon-arrow-light.svg" class="dropdown-arrow desktop">
-            <img src="images/icon-arrow-dark.svg" class="arrow-mb">
-            <div class="product-dropdown-menu drop drop-mb">
+          <li class="desk-link desk-text"><a href="#">Product</a><img src="images/icon-arrow-light.svg" class="arrow-dt">
+            <div class="product-dropdown-menu drop-desk">
               <ul>
                 <li><a href="#">Overview</a></li>
                 <li><a href="#">Pricing</a></li>
@@ -41,9 +35,8 @@
               </ul>
             </div>
           </li>   
-          <li class="open text"><a href="#">Company</a><img src="images/icon-arrow-light.svg" class="dropdown-arrow desktop">
-            <img src="images/icon-arrow-dark.svg" class="arrow-mb">
-            <div class="company-dropdown-menu drop drop-mb">
+          <li class="desk-link desk-text"><a href="#">Company</a><img src="images/icon-arrow-light.svg" class="arrow-dt">
+            <div class="company-dropdown-menu drop-desk">
               <ul>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Team</a></li>
@@ -52,9 +45,8 @@
               </ul>
             </div>
           </li>
-          <li class="open text"><a href="#">Connect</a><img src="images/icon-arrow-light.svg" class="dropdown-arrow desktop">
-            <img src="images/icon-arrow-dark.svg" class="arrow-mb">
-            <div class="connect-dropdown-menu drop drop-mb">
+          <li class="desk-link desk-text"><a href="#">Connect</a><img src="images/icon-arrow-light.svg" class="arrow-dt">
+            <div class="connect-dropdown-menu drop-desk">
               <ul>
                 <li><a href="#">Contact</a></li>
                 <li><a href="#">Newsletter</a></li>
@@ -64,49 +56,51 @@
           </li>
         </ul>
         </div>
-        <div class="nav-menu-mb">
-          <ul>
-            <li class="mobile-view view"><a href="#">Product</a><img src="images/icon-arrow-dark.svg" class="arrow-mb">
-              <div class="drop-mb">
-                <ul>
-                  <li><a href="#">Overview</a></li>
-                  <li><a href="#">Pricing</a></li>
-                  <li><a href="#">Marketplace</a></li>
-                  <li><a href="#">Features</a></li>
-                  <li><a href="#">Integrations</a></li>
-                </ul>
-              </div>
-            </li>   
-            <li class="mobile-view view"><a href="#">Company</a><img src="images/icon-arrow-dark.svg" class="arrow-mb">
-              <div class="drop-mb">
-                <ul>
-                  <li><a href="#">About</a></li>
-                  <li><a href="#">Team</a></li>
-                  <li><a href="#">Blog</a></li>
-                  <li><a href="#">Careers</a></li>
-                </ul>
-              </div>
-            </li>
-            <li class="mobile-view view"><a href="#">Connect</a><img src="images/icon-arrow-dark.svg" class="arrow-mb">
-              <div class="drop-mb">
-                <ul>
-                  <li><a href="#">Contact</a></li>
-                  <li><a href="#">Newsletter</a></li>
-                  <li><a href="#">LinkedIn</a></li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-          <hr>
-          <div class="mobile-reg">
+        <div class="nav-menu-container">
+          <div class="nav-menu-mb">
             <ul>
-              <li><a href="#" class="login">
-                <input type="button" value="Login" class="login-btn">
-              </a></li>
-              <li><a href="#" class="sign-up">
-                <input type="button" value="Sign Up" class="sign-up-btn">
-              </a></li>
+              <li class="mobile-view"><a href="#" class="mob-link">Product</a><img src="images/icon-arrow-dark.svg" class="arrow-mb">
+                <div class="drop-mob">
+                  <ul>
+                    <li><a href="#">Overview</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Marketplace</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Integrations</a></li>
+                  </ul>
+                </div>
+              </li>   
+              <li class="mobile-view"><a href="#" class="mob-link">Company</a><img src="images/icon-arrow-dark.svg" class="arrow-mb">
+                <div class="drop-mob">
+                  <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Team</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Careers</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="mobile-view"><a href="#" class="mob-link">Connect</a><img src="images/icon-arrow-dark.svg" class="arrow-mb">
+                <div class="drop-mob">
+                  <ul>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Newsletter</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                  </ul>
+                </div>
+              </li>
             </ul>
+            <hr>
+            <div class="mobile-reg">
+              <ul>
+                <li><a href="#" class="login">
+                  <input type="button" value="Login" class="login-btn">
+                </a></li>
+                <li><a href="#" class="sign-up">
+                  <input type="button" value="Sign Up" class="sign-up-btn">
+                </a></li>
+              </ul>
+            </div>
           </div>
         </div>
         <div class="hamburger">
@@ -236,6 +230,10 @@
           <li><a href="#">LinkedIn</a></li>
         </ul>
       </div>
+    </div> 
+    <div class="attribution">
+      Challenge by: <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a> || 
+      Coded by: <a href="https://github.com/danielswift10">daniel swift</a>
     </div>
   </footer>
   <script src="script.js"></script>
